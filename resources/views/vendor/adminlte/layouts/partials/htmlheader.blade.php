@@ -17,6 +17,10 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+    {{-- SweetAlert CSS--}}
+    <link rel="stylesheet" href="../../../../../../resources/sweetalert2/dist/sweetalert2.min.css">
+    {{-- End SweetAlert CSS--}}
+
     <script>
         //See https://laracasts.com/discuss/channels/vue/use-trans-in-vuejs
         window.trans = @php

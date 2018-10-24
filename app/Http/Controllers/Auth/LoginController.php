@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use App\User;
 
 class LoginController extends Controller
 {
@@ -68,10 +67,7 @@ class LoginController extends Controller
      * @return bool
      */
     protected function attemptLogin(Request $request)
-    {   
-        $email = $request->get('email');
-        $usuario =  User::where('email',$email)->first();
-        // echo "<pre>**"; print_r($usuario); echo "**</pre>";// die(' pausa ');
+    {
         if ($this->username() === 'email') {
             return $this->attemptLoginAtAuthenticatesUsers($request);
         }

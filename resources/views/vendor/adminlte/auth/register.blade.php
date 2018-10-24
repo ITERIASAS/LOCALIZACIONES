@@ -80,7 +80,7 @@
     @include('adminlte::layouts.partials.scripts_auth')
 
     @include('adminlte::auth.terms')
-
+    {{--@include('sweet::alert')--}}
     <script>
         $(function () {
             $('input').iCheck({
@@ -89,6 +89,14 @@
                 increaseArea: '20%' // optional
             });
         });
+
+        swal({
+            "timer":1800,
+            "title":"Título",
+            "text":"Notificación Básica",
+            "showConfirmButton":false
+        });
+
     </script>
 
     </body>
