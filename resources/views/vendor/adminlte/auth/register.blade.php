@@ -13,16 +13,16 @@
                 <a href="{{ url('/home') }}"><b>Localizaciones Terceros</b></a>
             </div>
 
-            {{--@if (count($errors) > 0)--}}
-                {{--<div class="alert alert-danger">--}}
-                    {{--<strong>Error!</strong> Hay algunos problemas con su entrada.<br><br>--}}
-                    {{--<ul>--}}
-                        {{--@foreach ($errors->all() as $error)--}}
-                            {{--<li>{{ $error }}</li>--}}
-                        {{--@endforeach--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--@endif--}}
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> Hay algunos problemas con su entrada.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <div class="register-box-body">
                 <p class="login-box-msg">Registar un nuevo usuario</p>
