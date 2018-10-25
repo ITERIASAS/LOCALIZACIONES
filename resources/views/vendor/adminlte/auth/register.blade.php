@@ -13,16 +13,16 @@
                 <a href="{{ url('/home') }}"><b>Localizaciones Terceros</b></a>
             </div>
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Error!</strong> Hay algunos problemas con su entrada.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            {{--@if (count($errors) > 0)--}}
+                {{--<div class="alert alert-danger">--}}
+                    {{--<strong>Error!</strong> Hay algunos problemas con su entrada.<br><br>--}}
+                    {{--<ul>--}}
+                        {{--@foreach ($errors->all() as $error)--}}
+                            {{--<li>{{ $error }}</li>--}}
+                        {{--@endforeach--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--@endif--}}
 
             <div class="register-box-body">
                 <p class="login-box-msg">Registar un nuevo usuario</p>
@@ -44,11 +44,11 @@
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Contraseña" name="password"/>
+                        <input type="password" class="form-control" placeholder="Password" name="password"/>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Vuelva a escribir la contraseña" name="password_confirmation"/>
+                        <input type="password" class="form-control" placeholder="Confirmar password" name="password_confirmation"/>
                         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                     </div>
                     <div class="row">
@@ -90,14 +90,13 @@
             });
         });
 
-        swal({
-            "timer":1800,
-            "title":"Título",
-            "text":"Notificación Básica",
-            "showConfirmButton":false
-        });
-
     </script>
+    @if (count($errors) > 0)
+        <script>
+            var errors = '{{ json_encode(implode($errors->all())) }}';
+            errorsMsg(errors);
+        </script>
+    @endif
 
     </body>
 

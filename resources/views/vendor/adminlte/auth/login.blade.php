@@ -12,16 +12,16 @@
                 <a href="{{ url('/home') }}"><b>Localizaciones Terceros</b></a>
             </div><!-- /.login-logo -->
 
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Error!</strong> Hay algunos problemas con su entrada.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        {{--@if (count($errors) > 0)--}}
+            {{--<div class="alert alert-danger">--}}
+                {{--<strong>Error!</strong> Hay algunos problemas con su entrada.<br><br>--}}
+                {{--<ul>--}}
+                    {{--@foreach ($errors->all() as $error)--}}
+                        {{--<li>{{ $error }}</li>--}}
+                    {{--@endforeach--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--@endif--}}
 
         <div class="login-box-body">
         <p class="login-box-msg"> Inicia sesión para acceder </p>
@@ -71,6 +71,12 @@
             });
         });
     </script>
+    @if (count($errors) > 0)
+        <script>
+            var errors = '{{ json_encode(implode($errors->all())) }}';
+            errorsMsg(errors);
+        </script>
+    @endif
 </body>
 
 @endsection

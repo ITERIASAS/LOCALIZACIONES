@@ -18,7 +18,7 @@
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     {{-- SweetAlert CSS--}}
-    <link rel="stylesheet" href="../../../../../../resources/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="{{ asset('css/sweetalert2/sweetalert2.min.css') }}" type="text/css"/>
     {{-- End SweetAlert CSS--}}
 
     <script>

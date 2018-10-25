@@ -14,11 +14,11 @@
             <a href="{{ url('/home') }}"><b>Localizaciones Terceros</b></a>
         </div><!-- /.login-logo -->
 
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
+        {{--@if (session('status'))--}}
+            {{--<div class="alert alert-success">--}}
+                {{--{{ session('status') }}--}}
+            {{--</div>--}}
+        {{--@endif--}}
 
         {{--@if (count($errors) > 0)--}}
             {{--<div class="alert alert-danger">--}}
@@ -71,6 +71,18 @@
             });
         });
     </script>
+    @if (count($errors) > 0)
+        <script>
+            var errors = '{{ json_encode(implode($errors->all())) }}';
+            errorsMsg(errors);
+        </script>
+    @endif
+    @if (session('status'))
+        <script>
+            var success = '{{ session('status') }}';
+            successMsg(success);
+        </script>
+    @endif
 </body>
 
 @endsection
