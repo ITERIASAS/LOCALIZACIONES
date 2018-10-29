@@ -31,7 +31,8 @@
     }
 ?>
 @component('mail::button', ['url' => $actionUrl, 'color' => $color])
-{{ $actionText }}
+{{--{{ $actionText }}--}}
+Restablecer contraseña
 @endcomponent
 @endisset
 
@@ -61,14 +62,14 @@
         {{--'actionUrl' => $actionUrl--}}
     {{--]--}}
 {{--)--}}
-@lang(
-    "Si estas teniendo problemas con el boton \":actionText\", copia y pega en tu navegador\n".
-    'la siguiente URL: [:actionURL](:actionURL)',
-    [
-        'actionText' => $actionText,
-        'actionUrl' => $actionUrl
-    ]
-)
+{{--@lang(--}}
+    {{--"Si estas teniendo problemas con el boton \":actionText\", copia y pega en tu navegador\n".--}}
+    {{--'la siguiente URL: [:actionURL](:actionURL)',--}}
+    {{--[--}}
+        {{--'actionText' => $actionText,--}}
+        {{--'actionUrl' => $actionUrl--}}
+    {{--]--}}
+{{--)--}}
 @endcomponent
 @endisset
 @endcomponent

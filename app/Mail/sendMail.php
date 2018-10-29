@@ -29,11 +29,10 @@ class sendMail extends Mailable
     public function build()
     {
 
-        $this->withSwiftMessage(function ($message) {
-            $message->getHeaders()
-                ->addTextHeader('Custom-Header', 'HeaderValue');
-        });
-
-        return $this->view('view.mail.mail');
+        return $this->subject(Lang::getFromJson('Encabezado mensaje'))
+//                    ->withSwiftMessage(function ($message) {
+//                        $message->getHeaders()
+//                                ->addTextHeader('Custom-Header', 'HeaderValue');})
+                    ->view('view.mail.mail');
     }
 }
